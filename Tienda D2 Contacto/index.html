@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiendas D2 | Servicio al Cliente</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header__container">
+            <div class="header__logo">
+                <div class="header__logo-icon">D2</div>
+                <span class="header__logo-text">Tiendas D2</span>
+            </div>
+        </div>
+        <div class="header__hero">
+            <h1 class="header__title">Servicio al Cliente</h1>
+            <p class="header__subtitle">Bienvenido al canal de atención de Tiendas D2. Estamos comprometidos con brindarle una experiencia de compra excelente en todas nuestras sucursales, incluida la sede Ipiales. Escríbanos sus peticiones, quejas, reclamos o solicitudes y le responderemos a la brevedad posible.</p>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="form-section">
+            <h2 class="form-section__title">Envíe su solicitud</h2>
+            <p class="form-section__subtitle">Complete el siguiente formulario y nuestro equipo se comunicará con usted.</p>
+
+            <form id="contactForm" class="form" novalidate>
+                <div class="form__group">
+                    <label for="nombre" class="form__label">Nombre completo</label>
+                    <input type="text" id="nombre" name="nombre" class="form__input" placeholder="Ej: María Fernanda López" required>
+                    <span class="form__error" id="errorNombre">Por favor ingrese su nombre completo.</span>
+                </div>
+
+                <div class="form__group">
+                    <label for="correo" class="form__label">Correo electrónico</label>
+                    <input type="email" id="correo" name="correo" class="form__input" placeholder="Ej: maria@gmail.com" required>
+                    <span class="form__error" id="errorCorreo">Por favor ingrese un correo electrónico válido.</span>
+                </div>
+
+                <div class="form__group">
+                    <label for="telefono" class="form__label">Teléfono / Celular</label>
+                    <input type="tel" id="telefono" name="telefono" class="form__input" placeholder="Ej: 3001234567" required>
+                    <span class="form__error" id="errorTelefono">Por favor ingrese su número de teléfono.</span>
+                </div>
+
+                <div class="form__group">
+                    <label for="tipoSolicitud" class="form__label">Tipo de solicitud</label>
+                    <select id="tipoSolicitud" name="tipoSolicitud" class="form__input" required>
+                        <option value="">Seleccione una opción</option>
+                        <option value="consulta">Consulta general</option>
+                        <option value="pqrs">PQRS (Peticiones, Quejas, Reclamos, Solicitud de empleo)</option>
+                    </select>
+                    <span class="form__error" id="errorTipo">Por favor seleccione un tipo de solicitud.</span>
+                </div>
+
+                <div class="form__group form__group--hidden" id="grupoPdf">
+                    <label for="archivoPdf" class="form__label">Adjunte su hoja de vida (PDF, máximo 10 MB)</label>
+                    <div class="upload-box" id="uploadBox">
+                        <p class="upload-box__text">Haga clic aquí o arrastre su hoja de vida en PDF</p>
+                        <input type="file" id="archivoPdf" name="archivoPdf" class="upload-box__input" accept="application/pdf">
+                    </div>
+                    <span class="form__error" id="errorPdf">El archivo debe ser PDF y no superar los 10 MB.</span>
+                </div>
+
+                <div class="form__group">
+                    <label for="mensaje" class="form__label">Mensaje o detalle de la solicitud</label>
+                    <textarea id="mensaje" name="mensaje" class="form__input form__input--textarea" placeholder="Describa su solicitud..." required></textarea>
+                    <span class="form__error" id="errorMensaje">Por favor escriba un mensaje.</span>
+                </div>
+
+                <div class="form__group form__group--checkbox">
+                    <input type="checkbox" id="politicas" name="politicas" class="form__checkbox">
+                    <label for="politicas" class="form__label form__label--checkbox">Acepto el tratamiento de mis datos personales según las políticas de Tiendas D2.</label>
+                    <span class="form__error" id="errorPoliticas">Debe aceptar las políticas de tratamiento de datos.</span>
+                </div>
+
+                <button type="submit" class="form__button">Enviar Solicitud</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="footer__text">© 2026 Tiendas D2. Todos los derechos reservados.</p>
+    </footer>
+
+    <div class="toast" id="toast">
+        <span class="toast__icon">✓</span>
+        <span class="toast__text">¡Tu PDF se subió con éxito!</span>
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="modal__content">
+            <div class="modal__icon">✓</div>
+            <h3 class="modal__title">¡Mensaje enviado con éxito!</h3>
+            <p class="modal__text">En breve nos comunicaremos con usted desde Tiendas D2.</p>
+            <button class="modal__button" id="modalCerrar">Aceptar</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
